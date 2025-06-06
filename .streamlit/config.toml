@@ -1,0 +1,11 @@
+[server]
+runOnSave = false
+enableCORS = false
+headless = true
+
+[browser]
+gatherUsageStats = false  # disables telemetry
+serverAddress = "localhost"
+
+[client]
+toolbarMode = "minimal"  # removes "Rerun", "Deploy", etc.

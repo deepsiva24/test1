@@ -27,13 +27,6 @@ upload=st.sidebar.file_uploader("Upload Your Image:",type=["jpg","png"])
 if upload:
     image = Image.open(upload)
     st.image(image, caption="Uploaded Image", use_column_width=True)
-# Set OpenAI API key from Streamlit secrets
-# client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
-# client=OpenAI(api_key="")
-# model="llama3.2:3b"
-# Set a default model
-# if "openai_model" not in st.session_state:
-#     st.session_state["openai_model"] = "gpt-4o-mini"
 
 # Initialize chat history
 if "messages" not in st.session_state:

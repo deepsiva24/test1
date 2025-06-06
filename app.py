@@ -29,7 +29,7 @@ if upload:
     st.image(image, caption="Uploaded Image", use_column_width=True)
 # Set OpenAI API key from Streamlit secrets
 # client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
-# client=OpenAI(api_key="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")
+# client=OpenAI(api_key="")
 # model="llama3.2:3b"
 # Set a default model
 # if "openai_model" not in st.session_state:

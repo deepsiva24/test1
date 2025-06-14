@@ -1,0 +1,21 @@
+<div class="performance-container">
+  <h2>Student Performance Overview</h2>
+
+  <div class="chart-row">
+    <div class="chart-box">
+      <h3>Exam Scores (Bar Chart)</h3>
+      <div echarts [options]="barChartOptions" class="echart-instance"></div>
+    </div>
+
+    <div class="chart-box">
+      <h3>Attendance (Pie Chart)</h3>
+      <div echarts [options]="pieChartOptions" class="echart-instance"></div>
+    </div>
+  </div>
+
+  <div class="details-section">
+    <h3>Recent Performance Details</h3>
+    <p>Overall average score: <strong>82.5%</strong></p>
+    <p>Last 30 days attendance: <strong>92%</strong></p>
+  </div>
+</div> 

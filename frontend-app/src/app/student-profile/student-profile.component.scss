@@ -1,0 +1,26 @@
+.student-profile-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: #fff;
+  h2 {
+    margin-top: 0;
+  }
+  img {
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      padding: 0.25rem 0;
+    }
+  }
+} 

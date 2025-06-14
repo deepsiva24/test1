@@ -1,0 +1,152 @@
+h2 {
+  font-family: 'Roboto', sans-serif; /* Modern and clean font */
+  font-size: 2.2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.student-form {
+  max-width: 1200px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(79,140,255,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: 'Open Sans', sans-serif; /* General font for the form */
+}
+
+.form-tile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.form-tile {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  background-color: #f9f9f9;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+label {
+  font-weight: 600; /* Slightly bolder labels */
+  margin-bottom: 0.5rem; /* More space below labels */
+  font-size: 1.05rem; /* Slightly larger label font */
+  color: #555;
+  .required-asterisk {
+    color: red;
+    margin-left: 5px;
+  }
+}
+input, select { /* Apply styles to both input and select */
+  padding: 0.6rem;
+  border: 1px solid #c0c0c0; /* Slightly lighter border */
+  border-radius: 5px;
+  font-size: 1.05rem; /* Slightly larger input font */
+  transition: border-color 0.2s ease-in-out;
+  &:focus {
+    border-color: #4f8cff; /* Highlight on focus */
+    box-shadow: 0 0 0 0.1rem rgba(79,140,255,0.25); /* Subtle shadow on focus */
+    outline: none;
+  }
+}
+button[type="submit"] {
+  background: linear-gradient(90deg, #4f8cff 0%, #3358e0 100%);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem; /* Smaller padding */
+  border-radius: 20px; /* Slightly smaller border-radius */
+  font-size: 1rem; /* Smaller font size */
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1.5rem; /* More space above button */
+  transition: background 0.2s, box-shadow 0.2s;
+  align-self: flex-start; /* Align button to the start */
+}
+button[disabled] {
+  opacity: 0.5; /* More visible disabled state */
+  cursor: not-allowed;
+}
+.success-msg {
+  color: #2ecc40;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.error-msg {
+  color: #e53935;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.bulk-upload-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(79,140,255,0.08);
+  font-family: 'Open Sans', sans-serif;
+
+  h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .file-input-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+
+    input[type="file"] {
+      flex-grow: 1;
+      padding: 10px;
+      border: 1px solid #c0c0c0;
+      border-radius: 5px;
+      font-size: 1rem;
+      max-width: 300px; /* Limit file input width */
+    }
+
+    button {
+      background: linear-gradient(90deg, #28a745 0%, #218838 100%); /* Green for upload */
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .success-msg,
+  .error-msg {
+    text-align: center;
+    margin-top: 1rem;
+  }
+} 

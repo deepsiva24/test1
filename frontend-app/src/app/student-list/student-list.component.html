@@ -1,0 +1,60 @@
+<div class="student-list-container">
+  <div class="search-bar-container">
+    <input type="text" [(ngModel)]="search" (input)="onSearchChange()" placeholder="Search students..." class="search-input" />
+    <span class="search-icon material-icons">search</span>
+  </div>
+
+  <div class="table-responsive">
+    <table class="student-table">
+      <thead>
+        <tr>
+          <th>Photo</th>
+          <th>Admission ID</th>
+          <th>Name</th>
+          <th>Branch</th>
+          <th>Year of Study</th>
+          <th>Father's Name</th>
+          <th>Gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="showShimmer">
+          <tr *ngFor="let _ of [].constructor(pageSize)">
+            <td><div class="shimmer student-photo-shimmer"></div></td>
+            <td><div class="shimmer"></div></td>
+            <td><div class="shimmer"></div></td>
+            <td><div class="shimmer"></div></td>
+            <td><div class="shimmer"></div></td>
+            <td><div class="shimmer"></div></td>
+            <td><div class="shimmer"></div></td>
+          </tr>
+        </ng-container>
+        <ng-container *ngIf="!showShimmer">
+          <tr *ngFor="let student of students" (click)="openProfile(student)">
+            <td>
+              <img *ngIf="student.photo_url" [src]="student.photo_url" alt="{{student.name}}" class="student-photo" />
+              <img *ngIf="!student.photo_url && student.gender === 'Male'" src="assets/imgs/male.png" alt="Male Placeholder" class="student-photo" />
+              <img *ngIf="!student.photo_url && student.gender === 'Female'" src="assets/imgs/female.png" alt="Female Placeholder" class="student-photo" />
+              <img *ngIf="!student.photo_url && (!student.gender || student.gender === '')" src="https://via.placeholder.com/40/808080/FFFFFF?text=N/A" alt="Gender N/A Placeholder" class="student-photo" />
+            </td>
+            <td>{{student.admission_id}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.branch}}</td>
+            <td>{{student.year_of_study}}</td>
+            <td>{{student.father_name}}</td>
+            <td>{{student.gender}}</td>
+          </tr>
+          <tr *ngIf="students.length === 0 && !loading">
+            <td colspan="7" class="no-data">{{errorMessage || 'No data available.'}}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination-controls" *ngIf="!loading && totalPages > 1">
+    <button (click)="prevPage()" [disabled]="currentPage === 1"><span class="material-icons">chevron_left</span> Prev</button>
+    <span class="page-info">Page {{currentPage}} of {{totalPages}}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next <span class="material-icons">chevron_right</span></button>
+  </div>
+</div> 

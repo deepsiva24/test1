@@ -1,0 +1,27 @@
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="student && !loading" class="student-profile-container">
+  <h2>{{student.name}}</h2>
+  <img *ngIf="student.photo_url" [src]="student.photo_url" alt="{{student.name}}" width="100" height="100" />
+  <div><strong>ID:</strong> {{student.id}}</div>
+
+  <h3>Attendance</h3>
+  <ul>
+    <li *ngFor="let att of student.attendance">
+      {{att.date}} - {{att.status}}
+    </li>
+  </ul>
+
+  <h3>Fee Details</h3>
+  <ul>
+    <li *ngFor="let fee of student.fees">
+      Amount: {{fee.amount}} | Status: {{fee.status}} | Due: {{fee.due_date}}
+    </li>
+  </ul>
+
+  <h3>Exam Performance</h3>
+  <ul>
+    <li *ngFor="let perf of student.performances">
+      {{perf.exam_name}}: {{perf.score}} / {{perf.max_score}}
+    </li>
+  </ul>
+</div> 

@@ -1,0 +1,12 @@
+<div class="clubs-container">
+  <h2>Our Clubs</h2>
+  <div class="club-grid">
+    <div *ngFor="let club of clubs" class="club-card">
+      <img [src]="club.imageUrl" alt="{{ club.name }}" class="club-image" />
+      <div class="club-info">
+        <h3>{{ club.name }}</h3>
+        <p>{{ club.description }}</p>
+      </div>
+    </div>
+  </div>
+</div> 

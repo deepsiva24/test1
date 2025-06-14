@@ -1,0 +1,46 @@
+<div class="fee-details-container">
+  <h2>Department-wise Fee Details</h2>
+
+  <div echarts [options]="chartOption" class="echart-container"></div>
+
+  <div class="charts-container">
+    <div class="chart-item">
+      <h3>Total Fee Summary (Pie Chart)</h3>
+      <div echarts [options]="pieChartOption" class="echart-container-small"></div>
+    </div>
+    <div class="chart-item">
+      <h3>Department-wise Fee Collection (Bar Chart)</h3>
+      <div echarts [options]="barChartOption" class="echart-container-small"></div>
+    </div>
+  </div>
+
+  <h3>Detailed Fee Breakdown</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Department</th>
+        <th>Transportation Paid</th>
+        <th>Transportation Due</th>
+        <th>Exam Paid</th>
+        <th>Exam Due</th>
+        <th>Tuition Paid</th>
+        <th>Tuition Due</th>
+        <th>Digital Class Paid</th>
+        <th>Digital Class Due</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of departmentFeeData">
+        <td>{{ data.department }}</td>
+        <td>{{ data.transportationPaid | currency:'USD' }}</td>
+        <td>{{ data.transportationDue | currency:'USD' }}</td>
+        <td>{{ data.examPaid | currency:'USD' }}</td>
+        <td>{{ data.examDue | currency:'USD' }}</td>
+        <td>{{ data.tuitionPaid | currency:'USD' }}</td>
+        <td>{{ data.tuitionDue | currency:'USD' }}</td>
+        <td>{{ data.digitalClassPaid | currency:'USD' }}</td>
+        <td>{{ data.digitalClassDue | currency:'USD' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> 
